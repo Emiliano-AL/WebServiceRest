@@ -100,11 +100,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\GlucosaController.cs" />
+    <Compile Include="Controllers\PacientesController.cs" />
+    <Compile Include="Controllers\PresionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteManager.cs" />
+    <Compile Include="Models\Glucosa.cs" />
+    <Compile Include="Models\GlucosaManager.cs" />
+    <Compile Include="Models\Paciente.cs" />
+    <Compile Include="Models\PacientesManager.cs" />
+    <Compile Include="Models\PresionArterial.cs" />
+    <Compile Include="Models\PresionArterialManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

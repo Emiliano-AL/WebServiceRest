@@ -10,10 +10,12 @@ namespace WebServiceRestAndroid.Controllers
     public class ClientesController : Controller
     {
         private ClienteManager clientesManager;
+        private PacientesManager pacientesManager;
 
         public ClientesController()
         {
             clientesManager = new ClienteManager();
+            pacientesManager = new PacientesManager();
         }
 
         // GET /Clientes
@@ -41,6 +43,23 @@ namespace WebServiceRestAndroid.Controllers
                                 JsonRequestBehavior.AllowGet);
                 case "DELETE":
                     return Json(clientesManager.DeleteCliente(id.GetValueOrDefault()));
+            }
+
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+
+        public JsonResult Paciente(int? id, Paciente item)
+        {
+            switch (Request.HttpMethod)
+            {
+                case "POST":
+                    return Json(pacientesManager.InsertPaciente(item));
+                case "PUT":
+                    return Json(new { Error = false, Message = "Hay que implementar" });
+                case "GET":
+                    return Json(new { Error = false, Message = "Hay que implementar" });
+                case "DELETE":
+                    return Json(new { Error = false, Message = "Hay que implementar" });
             }
 
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
